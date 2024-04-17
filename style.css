@@ -1,0 +1,41 @@
+/* Common styles */
+.container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Tic Tac Toe specific styles */
+.board {
+    margin: 20px auto;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    font-size: 36px;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+/* Scoreboard specific styles */
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
