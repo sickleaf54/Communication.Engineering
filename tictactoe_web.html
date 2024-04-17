@@ -1,1 +1,59 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        {% if is_tic_tac_toe %}
+        <h1>Tic Tac Toe</h1>
+        <div class="board">
+            <table>
+                <tr>
+                    <td><button id="btn00" class="cell" onclick="makeMove(0, 0)"></button></td>
+                    <td><button id="btn01" class="cell" onclick="makeMove(0, 1)"></button></td>
+                    <td><button id="btn02" class="cell" onclick="makeMove(0, 2)"></button></td>
+                </tr>
+                <tr>
+                    <td><button id="btn10" class="cell" onclick="makeMove(1, 0)"></button></td>
+                    <td><button id="btn11" class="cell" onclick="makeMove(1, 1)"></button></td>
+                    <td><button id="btn12" class="cell" onclick="makeMove(1, 2)"></button></td>
+                </tr>
+                <tr>
+                    <td><button id="btn20" class="cell" onclick="makeMove(2, 0)"></button></td>
+                    <td><button id="btn21" class="cell" onclick="makeMove(2, 1)"></button></td>
+                    <td><button id="btn22" class="cell" onclick="makeMove(2, 2)"></button></td>
+                </tr>
+            </table>
+        </div>
+        <div id="result"></div>
+        {% else %}
+        <h1>Scoreboard</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Player</th>
+                    <th>Wins</th>
+                    <th>Losses</th>
+                    <th>Ties</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for player in players %}
+                <tr>
+                    <td>{{ player.name }}</td>
+                    <td>{{ player.wins }}</td>
+                    <td>{{ player.losses }}</td>
+                    <td>{{ player.ties }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
